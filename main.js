@@ -16,3 +16,21 @@ function operate(operator, x, y) {
     else if(operator == '*') return multiply(x, y);
     else if(operator == '/') return divide(x, y);
 }
+let btn = document.getElementById('add-btn');
+let numStore = '';
+let operatorStore = '';
+
+for(i = 0; i <= 9; i ++) {
+    let btn = document.getElementById(`num${i}-btn`);
+    let display = document.getElementById("display");
+    btn.addEventListener("click", function() {
+        if(operatorStore == '') {
+            display.textContent += btn.textContent;
+        }
+        
+    });
+}
+
+btn.addEventListener("click", function() {
+    numStore = document.getElementById("display").textContent;
+});
